@@ -9,7 +9,8 @@
     "lint": "next lint",
     "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
     "prettier": "npx prettier . --write",
-    "update-storyblok-component-types": "storyblok pull-components --space=293802 && storyblok-generate-ts source=./components.293802.json target=./component-types-sb"
+    "update-storyblok-component-types": "storyblok pull-components --space=293802 && storyblok-generate-ts source=./components.293802.json target=./component-types-sb",
+    "prepare-build": "npm i && npm run update-storyblok-component-types && npm run prettier && npm run lint && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
