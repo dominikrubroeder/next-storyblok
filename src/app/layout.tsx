@@ -6,6 +6,8 @@ import {
   StoryblokBridgeLoader,
   storyblokInit,
 } from "@storyblok/react/rsc";
+import StoryblokRichTextField from "@/components/atoms/RichTextField/storyblok/StoryblokRichTextField";
+import StoryblokPage from "@/components/templates/storyblok/StoryblokPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,10 @@ export const metadata: Metadata = {
 storyblokInit({
   accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
-  components: {},
+  components: {
+    page: StoryblokPage,
+    richtext_field: StoryblokRichTextField,
+  },
 });
 
 export default function RootLayout({
